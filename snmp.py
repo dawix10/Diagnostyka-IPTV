@@ -7,7 +7,7 @@ def get(fname):
         CommunityData('public', mpModel=0),
         UdpTransportTarget((fname, 161)),
         ContextData(),
-        ObjectType(ObjectIdentity(".1.3.6.1.2.1.1.1.0"))
+        ObjectType(ObjectIdentity(".1.3.6.1.4.1.39165.1.1.0"))
     )
 
     errorIndication, errorStatus, errorIndex, varBinds = next(iterator)
@@ -54,5 +54,5 @@ def walk(host, oid):
             for varBind in varBinds:
                  print('%s = %s' % varBind)
 
-walk('192.168.88.25', '1.3.6.1.2.1.1.9.1.2')
+walk('192.168.88.25', '1.3.6.1.4.1.39165.1.1.0')
 get("192.168.88.25")
